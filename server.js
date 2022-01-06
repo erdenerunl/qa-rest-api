@@ -7,11 +7,14 @@ dotenv.config({
     path: "./configs/env/config.env"
 });
 
+
+// MongoDb Connection
 connectDatabase();
 
 const PORT = process.env.PORT;
 const app = express();
 
+app.use(express.json());
 app.use("/api", routers);
 
 
